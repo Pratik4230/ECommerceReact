@@ -2,7 +2,7 @@ import React from 'react'
 
 const Ecard = ({resData} = props) => {
     // const {id , rating,price,category} =resData;
-    console.log(resData)
+    // console.log(resData)
   return (
     <div className=''>
          <main className='flex '>
