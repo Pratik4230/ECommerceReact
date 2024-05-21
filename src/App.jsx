@@ -7,6 +7,8 @@ import Info from './components/Info'
 import {Outlet} from 'react-router-dom'
 import userContext from '../utils/userContext'
 import { useEffect, useState } from 'react'
+import {Provider} from 'react-redux'
+import createStore from './redux-store/createStore'
 
 
 function App() {
@@ -22,12 +24,15 @@ function App() {
   
 
   return (
+    <Provider store={createStore}>
     <userContext.Provider value={{username : name , setName}}>
     <>
+    
     <Header/>
     <Outlet/>
     </>
     </userContext.Provider>
+    </Provider>
   )
 }
 
