@@ -10,7 +10,7 @@ const Header = () => {
   // console.log("data" ,username)
 
 const cartItems = useSelector((store) => store.cart.items )
-console.log(cartItems);
+// console.log(cartItems);
 
   return (
     <div>
@@ -21,7 +21,7 @@ console.log(cartItems);
                 <li className="cursor-pointer p-2 rounded-lg hover:bg-blue-500  hover:text-white"> <Link to={'/'}> Home </Link> </li>
                 <li className="cursor-pointer p-2 rounded-lg hover:bg-blue-500  hover:text-white"> <Link to={'/'}> Contact </Link> </li>
                 <li className="cursor-pointer p-2 rounded-lg hover:bg-blue-500  hover:text-white"> <Link to={'/'}> About </Link> </li>
-                <li className="cursor-pointer p-2 rounded-lg hover:bg-blue-500  hover:text-white"> <Link to={'/'}> Cart {cartItems.length} </Link> </li>
+                <li className="cursor-pointer p-2 rounded-lg hover:bg-blue-500  hover:text-white"> <Link to={'/cart'}> Cart {cartItems.length} </Link> </li>
                 <li className="cursor-pointer p-2 rounded-lg hover:bg-blue-500  hover:text-white">  {username}</li>
             </ul>
         </nav>

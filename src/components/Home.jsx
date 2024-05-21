@@ -39,6 +39,7 @@ const handleCategoty = (e) => {
 
 
 const handlePrice = () => {
+
   setFilterData(filterData.sort((a,b) => ( b.price - a.price ) ))  
   console.log("clicked")
  

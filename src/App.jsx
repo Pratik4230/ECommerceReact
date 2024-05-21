@@ -9,6 +9,7 @@ import userContext from '../utils/userContext'
 import { useEffect, useState } from 'react'
 import {Provider} from 'react-redux'
 import createStore from './redux-store/createStore'
+import Cart from './components/Cart'
 
 
 function App() {
