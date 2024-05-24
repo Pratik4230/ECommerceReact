@@ -54,33 +54,23 @@ const handlePrice = () => {
   }
   return (
     <>
-    <div className='bg-red-100 '>
+    <div className='bg-violet-200 m-0.5 p-0.5 '>
 
-        <ul  className='bg-blue-600 flex justify-evenly  p-4  rounded-xl '>
-            <li onClick={ () => {setFilterData(data)}} className='text-xl font-bold text-lime-100 bg-blue-500 p-2 rounded-lg cursor-pointer hover:bg-lime-100 hover:text-blue-500' >All</li>
-            <li onClick={handleCategoty } className='text-xl font-bold text-lime-100 bg-blue-500 p-2 rounded-lg cursor-pointer hover:bg-lime-100 hover:text-blue-500' >men's clothing</li>
-            <li onClick={handleCategoty } className='text-xl font-bold text-lime-100 bg-blue-500 p-2 rounded-lg cursor-pointer hover:bg-lime-100 hover:text-blue-500' >jewelery</li>
-            <li onClick={handleCategoty } className='text-xl font-bold text-lime-100 bg-blue-500 p-2 rounded-lg cursor-pointer hover:bg-lime-100 hover:text-blue-500' >women's clothing</li>
-            <li onClick= {handleCategoty } className='text-xl font-bold text-lime-100 bg-blue-500 p-2 rounded-lg cursor-pointer hover:bg-lime-100 hover:text-blue-500' >electronics</li>
+        <ul  className='bg-blue-700 flex justify-evenly  p-2  rounded-3xl mx-3 '>
+            <li onClick={() => {setFilterData(data)} } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >All</li>
+            <li onClick={handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >men's clothing</li>
+            <li onClick={handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >jewelery</li>
+            <li onClick={handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >women's clothing</li>
+            <li onClick= {handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >electronics</li>
 
-<label > Filter
-           <select name="Filter" id="filter">
-            <option  value="rate"></option>
-            <option  value="rate">Rating : high to low</option> 
-            <option  value="rate">Rating : low to high</option> 
-            <option onClick={() => {setFilterData(filterData.sort((a,b) => ( b.price - a.price ) ))}} value="price" className='hover:bg-slate-300'>Price : high to low</option>
-            <option value="etc">Price : low to high</option>
-            <option value="abc">xyz</option>
-           </select>
-           </label>
         </ul>
 
-        <div className='m-2'>
-          <label htmlFor="username">UserName</label>
+        <div className='m-2 mx-5'>
+          <label htmlFor="username">UserName : </label>
           
           <input onChange={(e) => {setName(e.target.value)}} type="text" />
           
-          <button onClick={ handlePrice  }>Price : high to low</button>
+          <button className='mx-5 bg-blue-500' onClick={ handlePrice  }>Price : high to low</button>
         </div>
        <main className='flex flex-wrap'>
         
@@ -88,9 +78,10 @@ const handlePrice = () => {
         {filterData.map((obj) => ( 
           
         
-         <div key={obj.id}>
+         <div className=' m-4 flex flex-col   ' key={obj.id}>
       <Link to={`info/${obj.id}`}  >     < Ecard resData={obj}/>  </Link>
-       <button onClick={() => handleAddItem(obj)} className='mt-3 bg-blue-500  p-3 rounded-xl text-white'>ADD to Cart</button>
+
+       <button onClick={() => handleAddItem(obj)} className='-mt-9 mx-7 bg-blue-500  p-3 rounded-xl text-white'>ADD to Cart</button>
          </div> 
        
        

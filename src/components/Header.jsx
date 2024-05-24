@@ -13,16 +13,16 @@ const cartItems = useSelector((store) => store.cart.items )
 // console.log(cartItems);
 
   return (
-    <div>
-        <nav className="flex bg-slate-300 p-3 justify-between">
+    <div >
+        <nav className="  flex bg-white p-1 m-0.5 justify-between ">
             <div><img src="" alt="Image" /></div>
 
-            <ul className="flex bg-blue-200 p-3 w-1/3 justify-evenly text-lg" >
-                <li className="cursor-pointer p-2 rounded-lg hover:bg-blue-500  hover:text-white"> <Link to={'/'}> Home </Link> </li>
-                <li className="cursor-pointer p-2 rounded-lg hover:bg-blue-500  hover:text-white"> <Link to={'/'}> Contact </Link> </li>
-                <li className="cursor-pointer p-2 rounded-lg hover:bg-blue-500  hover:text-white"> <Link to={'/'}> About </Link> </li>
-                <li className="cursor-pointer p-2 rounded-lg hover:bg-blue-500  hover:text-white"> <Link to={'/cart'}> Cart {cartItems.length} </Link> </li>
-                <li className="cursor-pointer p-2 rounded-lg hover:bg-blue-500  hover:text-white">  {username}</li>
+            <ul className="flex bg-slate-100  p-1 w-1/3 justify-evenly font-semibold  rounded-bl-3xl rounded-tr-3xl " >
+                <li className="  cursor-pointer p-1.5  rounded-tr-3xl text-white bg-blue-500 hover:bg-white border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Home </Link> </li>
+                <li className="  cursor-pointer p-1.5 rounded-ss-3xl text-white bg-blue-500 hover:bg-white  border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Contact </Link> </li>
+                <li className="  cursor-pointer p-1.5 rounded-3xl text-white bg-blue-500 hover:bg-white  border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> About </Link> </li>
+                <li className="  cursor-pointer p-1.5 pr-3 rounded-e-3xl text-white bg-blue-400  hover:bg-white border-blue-600 border-2 hover:text-red-900"> <Link to={'/cart'}> Cart {cartItems.length} </Link> </li>
+                <li className="  cursor-pointer p-1.5 rounded-bl-2xl text-white bg-blue-500 hover:bg-white  border-blue-600  border-2 hover:text-red-900">  {username}</li>
             </ul>
         </nav>
     </div>

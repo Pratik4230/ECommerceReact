@@ -12,21 +12,22 @@ const Ecard = ({resData}) => {
 
 
   return (
-    <div className=''>
+    
          <main className='flex '>
-        <div className='bg-white h-96 m-5 flex flex-col items-center p-3'>
+        <div className='bg-white h-96 m-5 flex flex-col border-blue-700 border-4 rounded-lg items-center p-3'>
             <div>
-              <img className='h-36 w-40 m-2' src={image} alt="Image" />
+              <img className='h-36 w-44 m-2' src={image} alt="Image" />
             </div>
-            <p className='w-36 border line-clamp-4'>{title}</p>
-            <p className='my-2'>{category}</p>
-            <p className='my-1'>Price : {price} </p>
-             <p>Rating : {resData?.rating?.rate}</p>
-             <p>User : {username}</p>
+            <p className='w-36 bg-slate-100 font-bold line-clamp-4'>{title}</p>
+            <p className='my-2 font-semibold'>{category}</p>
+            <p className='my-1 font-medium'>Price : {price} </p>
+             <p className='font-mono'>Rating : {resData?.rating?.rate}</p>
+             <p className='text-blue-500 font-serif'>User : {username}</p>
              
         </div>
+
     </main>
-    </div>
+    
   )
 }
 

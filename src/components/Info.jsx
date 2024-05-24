@@ -26,42 +26,34 @@ const Info = ()=> {
     
 return (
     <>
-    <div className="flex flex-col  m-5 p-5  items-center border">
-        <div className="m-2"><img className="h-80" src={image} alt="Image" /></div>
-        <p className="m-2" >{title}</p>
-        <p className="m-2 w-1/2" >{description}</p>
-        <p className="m-2" > Category : {category}</p>
-       
-        <span className="m-2" > Price : {price}</span>
-         <span>Rating : {rating?.rate}</span>
+    <div className="flex flex-col  m-1 p-5  items-center bg-slate-300 ">
+        <div className="m-2 "><img className="h-80  rounded-xl" src={image} alt="Image" /></div>
+        <p className="m-2 text-lg font-bold " >{title}</p>
 
-
-<p className="m-2 mt-9 border  w-1/2">Accordian :  trying to make Accordian</p>
-
-<div className="m-2 mt-3 border  w-1/2">
-    <p className="bg-red-200 flex justify-between w-[100%]">
-<span  > Description </span> <span onClick={()=> {setShowData(!showData)}} className="cursor-pointer">+</span>
+        <div className="m-2 mt-3 flex flex-col place-items-center w-1/2">
+    <p onClick={()=> {setShowData(!showData)}} className="bg-blue-400 p-2 tracking-wider text-white  font-medium cursor-pointer flex  justify-center w-[25%] rounded-lg hover:bg-gray-50 hover:text-black">
+<span className="" > Description </span> 
 </p>
 
 <div>
-{showData &&  <p>{description}</p>  }
+{showData &&  <p className="p-3 font-serif">{description}</p>  }
 </div>
 
 </div>
-         
-         <div>
-            <section> 
-                <span>Category</span>
-                <span>+</span>
-            </section>
 
-            <section>
-                {showData && <p>{category}</p>}
-            </section>
-         </div>
-        <p className="m-2" > Category : {category}</p>
-    </div>
-    </>
+       
+        <p className="m-1 font-semibold" > Category : {category}</p>
+       
+        <span className="m-1 font-mono" > Price : {price}</span>
+         <span className=" text-lg">Rating : {rating?.rate}</span>
+
+
+  <section> 
+    <p>Reviews</p>
+     </section>
+        </div>
+           
+        </>
 )
 
 }
