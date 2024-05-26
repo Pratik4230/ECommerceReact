@@ -54,14 +54,14 @@ const handlePrice = () => {
   }
   return (
     <>
-    <div className='bg-violet-200 m-0.5 p-0.5 '>
+    <div className='w-screen bg-violet-200  p-0.5 '>
 
-        <ul  className='bg-blue-700 flex justify-evenly  p-2  rounded-3xl mx-3 '>
+        <ul  className= ' w-screen bg-blue-700 flex justify-evenly  p-2  rounded-3xl md:mx-3 '>
             <li onClick={() => {setFilterData(data)} } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >All</li>
             <li onClick={handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >men's clothing</li>
             <li onClick={handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >jewelery</li>
-            <li onClick={handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >women's clothing</li>
-            <li onClick= {handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >electronics</li>
+             {/* <li onClick={handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >women's clothing</li> 
+             <li onClick= {handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >electronics</li>  */}
 
         </ul>
 
@@ -72,7 +72,7 @@ const handlePrice = () => {
           
           <button className='mx-5 bg-blue-500' onClick={ handlePrice  }>Price : high to low</button>
         </div>
-       <main className='flex flex-wrap'>
+       <main className=' flex flex-wrap justify-center'>
         
         
         {filterData.map((obj) => ( 

@@ -13,12 +13,12 @@ const cartItems = useSelector((store) => store.cart.items )
 // console.log(cartItems);
 
   return (
-    <div >
-        <nav className="  flex bg-white p-1 m-0.5 justify-between ">
-            <div><img src="" alt="Image" /></div>
+    <div className="w-screen" >
+        <nav className="  sm:flex bg-white p-1  justify-between ">
+            <div className="flex justify-center "><img src="" alt="Image" /></div>
 
-            <ul className="flex bg-slate-100  p-1 w-1/3 justify-evenly font-semibold  rounded-bl-3xl rounded-tr-3xl " >
-                <li className="  cursor-pointer p-1.5  rounded-tr-3xl text-white bg-blue-500 hover:bg-white border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Home </Link> </li>
+            <ul className="flex bg-slate-100  p-1 sm:w-1/3 justify-evenly font-semibold  rounded-bl-3xl rounded-tr-3xl " >
+                <li className="   cursor-pointer p-1.5  rounded-tr-3xl text-white bg-blue-500 hover:bg-white border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Home </Link> </li>
                 <li className="  cursor-pointer p-1.5 rounded-ss-3xl text-white bg-blue-500 hover:bg-white  border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Contact </Link> </li>
                 <li className="  cursor-pointer p-1.5 rounded-3xl text-white bg-blue-500 hover:bg-white  border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> About </Link> </li>
                 <li className="  cursor-pointer p-1.5 pr-3 rounded-e-3xl text-white bg-blue-400  hover:bg-white border-blue-600 border-2 hover:text-red-900"> <Link to={'/cart'}> Cart {cartItems.length} </Link> </li>

@@ -30,8 +30,8 @@ return (
         <div className="m-2 "><img className="h-80  rounded-xl" src={image} alt="Image" /></div>
         <p className="m-2 text-lg font-bold " >{title}</p>
 
-        <div className="m-2 mt-3 flex flex-col place-items-center w-1/2">
-    <p onClick={()=> {setShowData(!showData)}} className="bg-blue-400 p-2 tracking-wider text-white  font-medium cursor-pointer flex  justify-center w-[25%] rounded-lg hover:bg-gray-50 hover:text-black">
+        <div className="m-2 mt-3 flex flex-col place-items-center sm:w-1/2">
+    <p onClick={()=> {setShowData(!showData)}} className="bg-blue-400 p-2 tracking-wider text-white  font-medium cursor-pointer flex  justify-center sm:w-[25%] rounded-lg hover:bg-gray-50 hover:text-black">
 <span className="" > Description </span> 
 </p>
 
