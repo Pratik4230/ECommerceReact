@@ -11,6 +11,8 @@ const Home = () => {
 
 const [data , setData] = useState([])
 
+const [customize , setCustomize] = useState(false)
+
 const [filterData, setFilterData] = useState([])
 
 // console.log(filterData)
@@ -42,6 +44,7 @@ const handlePrice = () => {
 
   setFilterData(filterData.sort((a,b) => ( b.price - a.price ) ))  
   console.log("clicked")
+  setCustomize(!customize)
  
   }
 
