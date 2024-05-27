@@ -19,14 +19,14 @@ const cartItems = useSelector((store) => store.cart.items )
 // console.log(cartItems);
 
   return (
-    <div className="w-screen" >
+    <div className="w-12/12" >
         <nav className="  flex bg-white p-1  justify-between ">
             <div className="flex justify-center "><img src="" alt="Image" /></div>
-   <p className="md:hidden  pr-4 pt-2" onClick={ () => {sethamb(!hamb)}}> {hamb ? <ImCross /> : <IoMenu /> }  </p>
+   <p className="md:hidden flex items-center " onClick={ () => {sethamb(!hamb)}}> {hamb ? <ImCross /> : <IoMenu /> }  </p>
    
 
    { hamb &&
-    <section className=" md:hidden bg-red-500 mt-8 w-screen absolute  indent-0 h-48">
+    <section className=" md:hidden bg-red-500 mt-8 w-9/12 absolute  indent-0 h-48">
    <ul className="  bg-slate-100  p-1  flex flex-col  items-center  font-semibold  rounded-bl-3xl rounded-tr-3xl " >
                 <li className=" w-3/12 flex justify-center cursor-pointer  p-1.5  my-3 rounded-tr-3xl text-white bg-blue-500 hover:bg-white border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Home </Link> </li>
                 <li className=" w-3/12  flex justify-center cursor-pointer p-1.5 my-3 rounded-ss-3xl text-white bg-blue-500 hover:bg-white  border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Contact </Link> </li>

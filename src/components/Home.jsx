@@ -13,6 +13,8 @@ const [data , setData] = useState([])
 
 const [customize , setCustomize] = useState(false)
 
+const [category , setCategory] = useState(false)
+
 const [filterData, setFilterData] = useState([])
 
 // console.log(filterData)
@@ -57,23 +59,33 @@ const handlePrice = () => {
   }
   return (
     <>
-    <div className='w-screen bg-violet-200  p-0.5 '>
+    <div className='w-12/12 bg-violet-200 flex flex-col items-center  p-0.5 '>
 
-        <ul  className= ' w-screen bg-blue-700 flex justify-evenly  p-2  rounded-3xl md:mx-3 '>
-            <li onClick={() => {setFilterData(data)} } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >All</li>
-            <li onClick={handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >men's clothing</li>
-            <li onClick={handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >jewelery</li>
-             {/* <li onClick={handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >women's clothing</li> 
-             <li onClick= {handleCategoty } className='text-xl text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >electronics</li>  */}
 
-        </ul>
+<p onClick={() => {setCategory(!category)} } className=' font-semibold absolute right-0 bg-black text-white p-2 m-2 rounded-xl hover:bg-white  hover:text-black cursor-pointer'>Categories</p> 
+   
+ { category ? <ul  className= '  w-1/2 absolute left-0  md:w-11/12 bg-blue-700 md:flex  justify-evenly  p-2  rounded-3xl md:mx-3 '>
+            <li onClick={() => {setFilterData(data)} } className='text-xl my-2 md:my-0  text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >All</li>
+            <li onClick={handleCategoty } className='text-xl my-2 md:my-0  md:w-auto   text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >men's clothing</li>
+            <li onClick={handleCategoty } className='text-xl my-2  md:my-0 text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >jewelery</li>
+             <li onClick={handleCategoty } className='text-xl my-2 md:my-0 text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >women's clothing</li> 
+             <li onClick= {handleCategoty } className='text-xl my-2 md:my-0  text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >electronics</li> 
 
-        <div className='m-2 mx-5'>
-          <label htmlFor="username">UserName : </label>
+        </ul>  : null }
+        
+
+
+        <div className='m-2  md:flex '>
+          <section className='flex'>
+          <label htmlFor="username" className='font-semibold flex items-center -ml-10 p-2' >UserName : </label>
           
-          <input onChange={(e) => {setName(e.target.value)}} type="text" />
-          
-          <button className='mx-5 bg-blue-500' onClick={ handlePrice  }>Price : high to low</button>
+          <input onChange={(e) => {setName(e.target.value)}} className='rounded-lg bg-slate-700  pl-3  text-white' placeholder='Enter your Name' type="text" />
+          </section>
+    <section className='mt-4 md:mt-0'>
+          <button className='mx-5 bg-blue-500 p-2 rounded-lg text-white' onClick={ handlePrice  }>Price : high to low</button>
+          </section>
+
+
         </div>
        <main className=' flex flex-wrap justify-center'>
         
