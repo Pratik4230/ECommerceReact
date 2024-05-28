@@ -10,7 +10,7 @@ import { ImCross } from "react-icons/im";
 const Header = () => {
 
 const[hamb , sethamb] = useState(false);
-console.log(hamb)
+// console.log(hamb)
 
   const {username} = useContext(userContext)
   // console.log("data" ,username)
@@ -19,7 +19,7 @@ const cartItems = useSelector((store) => store.cart.items )
 // console.log(cartItems);
 
   return (
-    <div className="w-12/12" >
+    <div  className="w-12/12" >
         <nav className="  flex bg-white p-1  justify-between ">
             <div className="flex justify-center "><img src="" alt="Image" /></div>
    <p className="md:hidden flex items-center " onClick={ () => {sethamb(!hamb)}}> {hamb ? <ImCross /> : <IoMenu /> }  </p>

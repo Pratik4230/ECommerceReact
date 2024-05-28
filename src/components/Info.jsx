@@ -48,9 +48,7 @@ return (
          <span className=" text-lg">Rating : {rating?.rate}</span>
 
 
-  <section> 
-    <p>Reviews</p>
-     </section>
+  
         </div>
            
         </>

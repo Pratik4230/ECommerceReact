@@ -75,9 +75,9 @@ const handlePrice = () => {
         
 
 
-        <div className='m-2  md:flex '>
-          <section className='flex'>
-          <label htmlFor="username" className='font-semibold flex items-center -ml-10 p-2' >UserName : </label>
+        <div className='m-2 w-11/12 md:flex border '>
+          <section className='flex  border '>
+          <label htmlFor="username" className='font-semibold flex items-center  p-2' >UserName : </label>
           
           <input onChange={(e) => {setName(e.target.value)}} className='rounded-lg bg-slate-700  pl-3  text-white' placeholder='Enter your Name' type="text" />
           </section>
