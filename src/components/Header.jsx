@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useState,  useEffect } from "react"
 import { Link } from "react-router-dom"
 import userContext from "../../utils/userContext"
 import { useDispatch, useSelector } from "react-redux"
@@ -23,9 +23,31 @@ const cartItems = useSelector((store) => store.cart.items )
         dispatch(toggleMenu())
       }
       
+// scroll navbar hide
+
+const [prevScrollPos, setPrevScrollPos] = useState(0);
+const [visible, setVisible] = useState(true)
+
+const handleScroll = () => {
+    const currentScrollPos = window.scrollY
+
+    if(currentScrollPos > prevScrollPos){
+        setVisible(false)
+    }else{
+        setVisible(true)
+    }
+
+    setPrevScrollPos(currentScrollPos)
+}
+
+useEffect( () => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll)
+})
 
   return (
-    <div   className=" sticky top-0 w-12/12" >
+    <div   className= {` sticky top-0 w-12/12 ${visible ? 'top-0' : '-top-24 duration-500'} `}>
         <nav className="  flex bg-slate-900 p-1  justify-between ">
           
              <button onClick={toggleCategory} className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring focus:ring-purple-300 active:bg-blue-700 px-3 py-2 rounded-lg text-white font-semibold shadow-md transition duration-300 ease-in-out transform hover:scale-105">Category </button> 
