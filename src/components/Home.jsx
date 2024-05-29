@@ -3,7 +3,7 @@ import Ecard from './Ecard'
 import { Link } from 'react-router-dom'
 import { E_URL } from '../../utils/contstants'
 import userContext from '../../utils/userContext'
-import { useDispatch } from 'react-redux';
+import { useDispatch ,useSelector } from 'react-redux';
 import { addItem } from '../redux-store/cartSlice';
 
 
@@ -14,7 +14,7 @@ const [data , setData] = useState([])
 
 const [customize , setCustomize] = useState(false)
 
-const [category , setCategory] = useState(false)
+
 
 const [filterData, setFilterData] = useState([])
 
@@ -38,7 +38,7 @@ const handleCategoty = (e) => {
     objct.category == e.target.innerHTML
 
   ))
-  console.log(fil)
+  // console.log(fil)
   setFilterData(fil)
 }
 
@@ -46,49 +46,51 @@ const handleCategoty = (e) => {
 const handlePrice = () => {
 
   setFilterData(filterData.sort((a,b) => ( b.price - a.price ) ))  
-  console.log("clicked")
+  // console.log("clicked")
   setCustomize(!customize)
  
   }
 
   const {setName} = useContext(userContext)
+  
 
   const dispatch = useDispatch();
 
   const handleAddItem = (obj) => {
     dispatch(addItem(obj))
   }
+
+  const toggle = useSelector((store) => store.category.isMenuOpen)
   return (
     <>
     <div className='w-12/12 mb-10 md:mb-0 bg-violet-200 flex flex-col items-center  p-0.5 '>
 
-
-<p onClick={() => {setCategory(!category)} } className=' font-semibold absolute right-0 bg-black text-white p-2 m-2 rounded-xl hover:bg-white  hover:text-black cursor-pointer'>Categories</p> 
-   
- { category ? <ul  className= '  w-1/2 absolute left-0  md:w-11/12 bg-blue-700 md:flex  justify-evenly  p-2  rounded-3xl md:mx-3 '>
-            <li onClick={() => {setFilterData(data)} } className='text-xl my-2 md:my-0  text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >All</li>
-            <li onClick={handleCategoty } className='text-xl my-2 md:my-0  md:w-auto   text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >men's clothing</li>
-            <li onClick={handleCategoty } className='text-xl my-2  md:my-0 text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >jewelery</li>
-             <li onClick={handleCategoty } className='text-xl my-2 md:my-0 text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >women's clothing</li> 
-             <li onClick= {handleCategoty } className='text-xl my-2 md:my-0  text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >electronics</li> 
+      {/* categories toggle */}
+ { toggle ? <ul  className= '  w-44 flex-col  absolute  h-1/2 left-0  md:w-11/12 bg-white md:bg-blue-700 md:flex md:flex-row md:h-auto justify-evenly  p-2  rounded-3xl md:mx-3 '>
+            <li onClick={() => {setFilterData(data)} } className='flex justify-center text-xl my-4 md:my-0  text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >All</li>
+            <li onClick={handleCategoty } className='flex justify-center text-xl my-4 md:my-0  md:w-auto   text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >men's clothing</li>
+            <li onClick={handleCategoty } className='flex justify-center text-xl my-4  md:my-0 text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >jewelery</li>
+             <li onClick={handleCategoty } className=' pl-10 md:pl-2 text-xl my-4 md:my-0 text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >women's clothing</li> 
+             <li onClick= {handleCategoty } className=' flex justify-center text-xl my-4 md:my-0  text-cyan-200 font-bold bg-gradient-to-l blue-300 p-2 rounded-xl cursor-pointer hover:text-lime-100 hover:bg-gradient-to-r from-blue-500 to-violet-400' >electronics</li> 
 
         </ul>  : null }
         
 
+       
+        <div className='m-2 w-11/12 flex justify-between border border-black  '>
+         
 
-        <div className='m-2 w-11/12 md:flex border '>
-          <section className='flex  border '>
-          <label htmlFor="username" className='font-semibold flex items-center  p-2' >UserName : </label>
-          
-          <input onChange={(e) => {setName(e.target.value)}} className='rounded-lg bg-slate-700  pl-3  text-white' placeholder='Enter your Name' type="text" />
-          </section>
-    <section className='mt-4 md:mt-0'>
-          <button className='mx-5 bg-blue-500 p-2 rounded-lg text-white' onClick={ handlePrice  }>Price : high to low</button>
+    <section className=' border border-red-600'>
+
           </section>
 
+      <button >Filter @</button>
 
         </div>
-       <main className=' flex flex-wrap justify-center'>
+
+          {/* <button className='mx-5 bg-blue-500 p-2 rounded-lg text-white' onClick={ handlePrice  }>Price : high to low</button> */}
+
+       <main  className=' scroll-smooth flex flex-wrap justify-center   '>
         
         
         {filterData.map((obj) => ( 

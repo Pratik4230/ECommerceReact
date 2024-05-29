@@ -11,8 +11,10 @@ const Footer = () => {
 
 const cartItems = useSelector((store) => store.cart.items )
 
+
+
   return (
-    <div className=' md:hidden  w-full fixed bottom-0 bg-black opacity-80 border rounded-xl border-black '>
+    <div className=' md:hidden  w-full fixed bottom-0 bg-black  rounded-xl '>
         <nav className=' w-full '>
       <ul className="   flex  p-1   justify-evenly font-semibold  rounded-bl-3xl rounded-tr-3xl " >
                 <li className="   cursor-pointer p-1.5  rounded-tr-3xl text-white bg-blue-600 hover:bg-white border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Home </Link> </li>

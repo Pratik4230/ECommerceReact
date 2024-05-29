@@ -16,10 +16,12 @@ import Footer from './components/Footer'
 function App() {
  
   const [name , setName] = useState()
+ 
 
   useEffect( () => {
     const dummyUser = {
-      username : "Pratik"
+      username : "Pratik",
+      
     }
     setName(dummyUser.username)
   },[])
@@ -27,7 +29,7 @@ function App() {
 
   return (
     <Provider store={createStore}>
-    <userContext.Provider value={{username : name , setName}}>
+    <userContext.Provider value={ {username : name , setName }}>
     <>
     
     <Header/>
