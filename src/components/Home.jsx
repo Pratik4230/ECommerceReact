@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { addItem } from '../redux-store/cartSlice';
 
 
+
 const Home = () => {
 
 const [data , setData] = useState([])
@@ -59,7 +60,7 @@ const handlePrice = () => {
   }
   return (
     <>
-    <div className='w-12/12 bg-violet-200 flex flex-col items-center  p-0.5 '>
+    <div className='w-12/12 mb-10 md:mb-0 bg-violet-200 flex flex-col items-center  p-0.5 '>
 
 
 <p onClick={() => {setCategory(!category)} } className=' font-semibold absolute right-0 bg-black text-white p-2 m-2 rounded-xl hover:bg-white  hover:text-black cursor-pointer'>Categories</p> 
@@ -103,6 +104,9 @@ const handlePrice = () => {
          ))}  
         </main>
     </div>
+
+    
+  
     </>
 
   )

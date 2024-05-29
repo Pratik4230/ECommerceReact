@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 import {Provider} from 'react-redux'
 import createStore from './redux-store/createStore'
 import Cart from './components/Cart'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
     
     <Header/>
     <Outlet/>
+    <Footer/>
     </>
     </userContext.Provider>
     </Provider>

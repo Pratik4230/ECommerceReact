@@ -11,18 +11,21 @@ const Cart = () => {
 
 
 const cartItems = useSelector((store) => store.cart.items)
-console.log(cartItems)
+// console.log(cartItems)
 
   const dispatch = useDispatch()
 
   
   return (
-    <div className='flex flex-col items-center '>
+    <div className='flex mb-10 md:mb-0 flex-col items-center '>
+
+       { cartItems.length == 0  ? <p>Looks like your cart is empty</p> : <p> anything else </p> }
+
         
             <h1 className='text-slate-800 text-5xl font-bold'>Cart</h1>
 
             <div className='flex flex-col items-center mt-7'>
-            <button onClick={() => (dispatch(clearCart()))} className='bg-blue-600 p-2 text-white border-blue-600 border-2 font-semibold rounded-xl  w-6/12 hover:bg-white hover:text-black'>Clear Cart</button>
+            <button onClick={() => (dispatch(clearCart()))} className='bg-blue-600 p-2 text-white border-blue-600 border-2 font-semibold rounded-xl   hover:bg-white hover:text-black'>Clear Cart</button>
         
 
         <section> 

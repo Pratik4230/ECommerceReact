@@ -26,7 +26,7 @@ const Info = ()=> {
     
 return (
     <>
-    <div className="flex flex-col  m-1 p-5  items-center bg-slate-300 ">
+    <div className="flex flex-col mb-10 md:mb-0 m-1 p-5  items-center bg-slate-300 ">
         <div className="m-2 "><img className="h-80  rounded-xl" src={image} alt="Image" /></div>
         <p className="m-2 text-lg font-bold " >{title}</p>
 
