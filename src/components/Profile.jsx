@@ -20,7 +20,7 @@ const [user , setUser] = useState({});
  const  {avatar_url, bio , followers,following, name , twitter_username,url} = user;
 
   return (
-    <div className='flex flex-col    '>
+    <div className='flex flex-col p-5   '>
         <h1 className='flex justify-center my-3 text-2xl font-semibold'> Profile</h1>
      
       <div className='flex justify-center'>
