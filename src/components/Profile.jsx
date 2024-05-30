@@ -20,7 +20,7 @@ const [user , setUser] = useState({});
  const  {avatar_url, bio , followers,following, name , twitter_username,url} = user;
 
   return (
-    <div className='flex flex-col p-10   '>
+    <div className='flex flex-col   '>
         <h1 className='flex justify-center my-3 text-2xl font-semibold'> Profile</h1>
      
       <div className='flex justify-center'>
@@ -30,7 +30,7 @@ const [user , setUser] = useState({});
       <p className='flex justify-center my-3 font-bold text-xl ' >{twitter_username}</p>
       <p className='flex justify-center my-3  ' > <span className='font-semibold text-lg'>bio:-  </span> <span className='text-lg'> { bio}</span>   </p>
       <p className='flex justify-center my-3 font-serif' > followers : {followers} , following : {following} </p>
-      <p className='flex justify-center my-3 font-medium' >Name : {name}</p>
+      <p className='flex justify-center mx-10 my-3 font-medium' >Name : {name}</p>
       <p className='flex justify-center my-3 font-mono' >  {url} </p>
     </div>
   )
