@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Ecard from './Ecard'
 import { Link } from 'react-router-dom'
 import { E_URL } from '../../utils/contstants'
-import userContext from '../../utils/userContext'
+
 import { useDispatch ,useSelector } from 'react-redux';
 import { addItem } from '../redux-store/cartSlice';
 
@@ -51,7 +51,7 @@ const handlePrice = () => {
  
   }
 
-  const {setName} = useContext(userContext)
+ 
   
 
   const dispatch = useDispatch();

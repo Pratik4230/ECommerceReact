@@ -1,15 +1,9 @@
 
-import React, { useContext } from 'react'
-import userContext from '../../utils/userContext';
-
+import React from 'react'
 
 const Ecard = ({resData}) => {
     const {image, title, price,category} =resData;
     // console.log(resData)
-
-   const {username} = useContext(userContext)
-
-
 
   return (
     
@@ -22,7 +16,7 @@ const Ecard = ({resData}) => {
             <p className='my-2 font-semibold'>{category}</p>
             <p className='my-1 font-medium'>Price : {price} </p>
              <p className='font-mono'>Rating : {resData?.rating?.rate}</p>
-             <p className='text-blue-500 font-serif'>User : {username}</p>
+             <p className='text-blue-500 font-serif'>User : </p>
              
         </div>
 

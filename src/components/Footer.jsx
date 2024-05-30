@@ -1,48 +1,31 @@
-import {useState, useEffect} from 'react'
+
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import userContext from '../../utils/userContext'
-import { useContext } from 'react'
+
+import { TiHomeOutline } from "react-icons/ti";
+import { MdPermContactCalendar , MdPermIdentity} from "react-icons/md";
+import { PiSignOutFill } from "react-icons/pi";
+
+
+import { FaShoppingCart } from "react-icons/fa";
 
 
 const Footer = () => {
 
-  const {username} = useContext(userContext)
 
 const cartItems = useSelector((store) => store.cart.items )
 
-// scroll navbar hide
 
-const [prevScrollPos, setPrevScrollPos] = useState(0);
-const [visible, setVisible] = useState(true)
-
-const handleScroll = () => {
-    const currentScrollPos = window.scrollY
-
-    if(currentScrollPos > prevScrollPos){
-        setVisible(false)
-    }else{
-        setVisible(true)
-    }
-
-    setPrevScrollPos(currentScrollPos)
-}
-
-useEffect( () => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll)
-})
 
   return (
-    <div className= {` md:hidden  w-full fixed bottom-0  bg-black rounded-xl ${visible ? 'bottom-0' : '-bottom-24 duration-500'} `}>
+    <div className= " md:hidden  w-full fixed bottom-0  bg-black rounded-xl ">
         <nav className=' w-full '>
-      <ul className="   flex  p-1   justify-evenly font-semibold  rounded-bl-3xl rounded-tr-3xl " >
-                <li className="   cursor-pointer p-1.5  rounded-tr-3xl text-white bg-blue-600 hover:bg-white border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Home </Link> </li>
-                <li className="  cursor-pointer p-1.5 rounded-ss-3xl text-white bg-blue-600 hover:bg-white  border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Contact </Link> </li>
-                <li className="  cursor-pointer p-1.5 rounded-3xl text-white bg-blue-600 hover:bg-white  border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> About </Link> </li>
-                <li className="  cursor-pointer p-1.5 pr-3 rounded-e-3xl text-white bg-blue-600  hover:bg-white border-blue-600 border-2 hover:text-red-900"> <Link to={'/cart'}> Cart {cartItems.length} </Link> </li>
-                <li className="  cursor-pointer p-1.5 rounded-bl-2xl text-white bg-blue-600 hover:bg-white  border-blue-600  border-2 hover:text-red-900">  {username}</li>
+      <ul className="   flex  p-1 items-center  justify-evenly font-semibold  rounded-bl-3xl rounded-tr-3xl " >
+                <li className="cursor-pointer flex items-center justify-center p-2 h-10 rounded-lg text-white hover:bg-white   border-2 hover:text-blue-600 duration-300  hover:scale-y-110  hover:-scale-x-125"> <Link to={'/'}> <TiHomeOutline /> </Link> </li>
+                <li className="cursor-pointer flex items-center justify-center p-2 h-10 rounded-lg text-white   hover:bg-white   border-2 hover:text-blue-600 duration-300  hover:scale-y-110  hover:-scale-x-125"> <Link to={'/'}> <MdPermContactCalendar /> </Link> </li>
+                <li className="cursor-pointer flex items-center justify-center p-2 h-10 rounded-lg text-white   hover:bg-white   border-2 hover:text-blue-600   duration-300  hover:scale-y-110  hover:-scale-x-125"> <Link to={'/profile'}> <MdPermIdentity /> </Link> </li>
+                <li className="cursor-pointer flex items-center justify-center p-1 h-10 w-10  rounded-lg text-white  hover:bg-white   border-2 hover:text-blue-600  "> <Link to={'/cart'}> <FaShoppingCart /> {cartItems.length} </Link> </li>
+                <li className="cursor-pointer flex  items-center justify-center p-2 h-10 rounded-lg text-white  hover:bg-white  border-2 hover:text-blue-600   duration-300  hover:scale-y-110  "> <PiSignOutFill /></li>
             </ul>   
         </nav>
     </div>
