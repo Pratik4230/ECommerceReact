@@ -31,7 +31,7 @@ const [user , setUser] = useState({});
       <p className='flex justify-center my-3  ' > <span className='font-semibold text-lg'>bio:-  </span> <span className='text-lg'> { bio}</span>   </p>
       <p className='flex justify-center my-3 font-serif' > followers : {followers} , following : {following} </p>
       <p className='flex justify-center  my-3 font-medium' >Name : {name}</p>
-      <p className='flex justify-center bg-slate-300 mx-10 my-3 font-mono' >  {url} </p>
+      <p className='flex flex-wrap bg-slate-300 mx-2 my-3 font-mono' >  {url} </p>
     </div>
   )
 }
