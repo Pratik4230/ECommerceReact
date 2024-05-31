@@ -13,6 +13,7 @@ import {Provider} from 'react-redux'
 
 import Cart from './components/Cart'
 import Footer from './components/Footer'
+import ShimmerUI from './components/ShimmerUI'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     <Header/>
 
     <Outlet/>
+    
     <Footer/>
     </>
    

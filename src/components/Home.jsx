@@ -5,6 +5,7 @@ import { E_URL } from '../../utils/contstants'
 
 import { useDispatch ,useSelector } from 'react-redux';
 import { addItem } from '../redux-store/cartSlice';
+import ShimmerUI from './ShimmerUI';
 
 
 
@@ -61,7 +62,10 @@ const handlePrice = () => {
   }
 
   const toggle = useSelector((store) => store.category.isMenuOpen)
-  return (
+
+  
+   return data.length == 0 ?  <ShimmerUI/>  : ( 
+   
     <>
     <div className='w-12/12 mb-10 md:mb-0 bg-violet-200 flex flex-col items-center  p-0.5 '>
 
