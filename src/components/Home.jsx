@@ -75,7 +75,7 @@ const handlePrice = (e) => {
    return data.length == 0 ?  <ShimmerUI/>  : ( 
    
     <>
-    <div className='w-12/12 mb-10 md:mb-0 bg-violet-200 flex flex-col items-center  p-0.5 '>
+    <div className='w-12/12 mb-10 md:mb-0 bg-blue-100 flex flex-col items-center  p-0.5 '>
 
       {/* categories toggle */}
  { toggle ? <ul  className= '  w-44 flex-col  absolute  h-1/2 left-0  md:w-11/12 bg-white md:bg-blue-700 md:flex md:flex-row md:h-auto justify-evenly  p-2  rounded-3xl md:mx-3 '>
