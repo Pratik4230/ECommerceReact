@@ -6,6 +6,7 @@ import { createBrowserRouter, createRoutesFromElements, Route , RouterProvider} 
 import Info from './components/Info.jsx'
 import Home from './components/Home.jsx'
 import Cart from './components/Cart.jsx'
+import LogIn from './components/LogIn.jsx'
 
 const Profile = lazy(() => import('../src/components/Profile'))
 
@@ -13,6 +14,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App/>} >
       <Route path='/' element={<Home/>}/>
+      <Route path='/login' element={<LogIn/>}/>
       <Route path='/cart' element={<Cart/>} />
       
       <Route path='/profile' element={( <Suspense fallback= {<p>heelo</p>}> <Profile/> </Suspense> )} />
