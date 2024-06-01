@@ -29,7 +29,7 @@ const password = useRef(null);
     <div className='flex flex-col items-center  p-3 h-screen '> 
       <h1 className='text-4xl font-semibold my-7 mb-6'> {isLogIn ? "LogIn" : "SignUp" } </h1>
 
-      <main className=' w-10/12 h-[60%] md:w-1/2  bg-slate-100 rounded-lg p-6 '>
+      <main className='  h-[60%] md:w-1/2  bg-slate-100 rounded-lg p-6 '>
 <p className='my-6 mb-9 flex justify-center' >Lets get  Started...</p>
 
 <form onSubmit={(e) => e.preventDefault()}>
