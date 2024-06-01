@@ -7,6 +7,9 @@ import { useDispatch ,useSelector } from 'react-redux';
 import { addItem } from '../redux-store/cartSlice';
 import ShimmerUI from './ShimmerUI';
 
+import { FaFilter } from "react-icons/fa";
+
+
 
 
 const Home = () => {
@@ -15,8 +18,7 @@ const [data , setData] = useState([])
 
 const [customize , setCustomize] = useState(false)
 
-
-
+const [filter , setFilter] = useState(false)
 const [filterData, setFilterData] = useState([])
 
 // console.log(filterData)
@@ -44,15 +46,21 @@ const handleCategoty = (e) => {
 }
 
 
-const handlePrice = () => {
+const handlePrice = (e) => {
 
-  setFilterData(filterData.sort((a,b) => ( b.price - a.price ) ))  
+ let value = e.target.innerHTML
+//  console.log(value)
+
+ value == "Price : high to low" ? setFilterData(filterData.sort((a,b) => ( b.price - a.price ) ))  :  setFilterData(filterData.sort((a,b) => ( a.price - b.price ) ))
   // console.log("clicked")
   setCustomize(!customize)
  
   }
 
- 
+ const toggleFilter = () => {
+   setFilter(!filter)
+   console.log(filter)
+ }
   
 
   const dispatch = useDispatch();
@@ -81,20 +89,20 @@ const handlePrice = () => {
         
 
        
-        <div className='m-2 w-11/12 flex justify-between border border-black  '>
-         
-
-    <section className=' border border-red-600'>
-
-          </section>
-
-      <button >Filter @</button>
-
+        <div className='m-2 p-3    '>
+        <section className=' absolute w-auto right-3  bg-blue-300 rounded-lg p-2 flex flex-col'> 
+      <button onClick={ () => toggleFilter()} className='bg-black flex justify-evenly item-center border-black text-white px-2 py-1 rounded-lg  hover:bg-white hover:text-black' >Filter <FaFilter /></button>
+   { filter ?  <aside className='flex flex-col' > 
+      <button  className='mx-5 bg-blue-500 mt-2 p-2 rounded-lg text-white  mb-2' onClick={ handlePrice  }>Price : high to low</button>
+      <button className='mx-5 bg-blue-500 p-2 rounded-lg text-white' onClick={ handlePrice  }>Price : low to high</button> 
+      </aside> : null
+         } 
+</section>
         </div>
 
-          {/* <button className='mx-5 bg-blue-500 p-2 rounded-lg text-white' onClick={ handlePrice  }>Price : high to low</button> */}
+          
 
-       <main  className=' scroll-smooth flex flex-wrap justify-center   '>
+       <main  className=' scroll-smooth flex flex-wrap justify-center    '>
         
         
         {filterData.map((obj) => ( 
