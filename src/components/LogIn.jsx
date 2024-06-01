@@ -26,7 +26,7 @@ const password = useRef(null);
 
   return (
     <>
-    <div className='flex text-sm md:text-lg flex-col items-center  p-3 h-screen '> 
+    <div className='flex text-base md:text-lg flex-col items-center  p-3 h-screen '> 
       <h1 className='text-4xl font-semibold my-7 mb-6'> {isLogIn ? "LogIn" : "SignUp" } </h1>
 
       <main className='  h-[60%] md:w-1/2  bg-slate-100 rounded-lg p-6 '>
