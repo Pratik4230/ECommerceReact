@@ -30,23 +30,23 @@ const password = useRef(null);
       <h1 className='text-4xl font-semibold my-7 mb-6'> {isLogIn ? "LogIn" : "SignUp" } </h1>
 
       <main className=' w-10/12 h-[60%] md:w-1/2  bg-slate-100 rounded-lg p-6 '>
-<p className='my-6 mb-9 flex justify-center' >Lorem ipsum dolor sit amet cinima, nam.</p>
+<p className='my-6 mb-9 flex justify-center' >Lets get  Started...</p>
 
 <form onSubmit={(e) => e.preventDefault()}>
 <section className='my-5 flex justify-center' > 
-    <label className='font-medium'>Username : </label>
+    <label className=' sm:font-medium'>Username : </label>
     <input  className='border-2 mx-2 bg-gray-700 text-white  border-black rounded-lg px-2 ' type="text" placeholder="Enter your name" />
      </section>
 
      {
         !isLogIn ? <section className='my-5 flex justify-center ' > 
-        <label className='font-medium'> Email Id : </label>
+        <label className='sm:font-medium'> Email Id : </label>
         <input ref={email} className='border-2 mx-2  bg-gray-700 text-white  border-black rounded-lg px-2 ' type="email" placeholder="Enter your Email"/>
          </section> : null
      }
 
      <section className='mb-5 flex justify-center'> 
-    <label className='font-medium'>Password : </label>
+    <label className='sm:font-medium'>Password : </label>
     <input ref={password} className='border-2 mx-2 bg-gray-700 text-white border-black rounded-lg px-2' type="password" placeholder="Enter your password"/>
      </section>
 
@@ -61,7 +61,7 @@ const password = useRef(null);
 
      </section>
      </form>
-     <p className='my-2 flex justify-center '> <span className='mx-3'> {isLogIn ? "Not Registered ?" : "Aldready Registered !" } </span> <span onClick={ () => setIsLogIn(!isLogIn)} className='text-blue-700 cursor-pointer' > {isLogIn ? "SignUp now" :  "LogIn now"} </span> </p>
+     <p className='my-2 flex justify-center '> <span className='mx-1 md:mx-3'> {isLogIn ? "Not Registered ?" : "Aldready Registered !" } </span> <span onClick={ () => setIsLogIn(!isLogIn)} className='text-blue-700 cursor-pointer' > {isLogIn ? "SignUp now" :  "LogIn now"} </span> </p>
 
       </main>
 
