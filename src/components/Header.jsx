@@ -27,7 +27,7 @@ const cartItems = useSelector((store) => store.cart.items )
 
           <ul className=" hidden md:flex bg-slate-100  p-1  sm:w-1/3 justify-evenly font-semibold  rounded-bl-3xl rounded-tr-3xl " >
                 <li className="   cursor-pointer p-1.5  rounded-tr-3xl text-white bg-blue-500 hover:bg-white border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Home </Link> </li>
-                <li className="  cursor-pointer p-1.5 rounded-ss-3xl text-white bg-blue-500 hover:bg-white  border-blue-600  border-2 hover:text-red-900"> <Link to={'/'}> Contact </Link> </li>
+                <li className="  cursor-pointer p-1.5 rounded-ss-3xl text-white bg-blue-500 hover:bg-white  border-blue-600  border-2 hover:text-red-900"> <Link to={'/contact'}> Contact </Link> </li>
                 <li className="  cursor-pointer p-1.5 rounded-3xl text-white bg-blue-500 hover:bg-white  border-blue-600  border-2 hover:text-red-900"> <Link to={'/profile'}> Profile </Link> </li>
                 <li className="  cursor-pointer p-1.5 pr-3 rounded-e-3xl text-white bg-blue-400  hover:bg-white border-blue-600 border-2 hover:text-red-900"> <Link to={'/cart'}> Cart {cartItems.length} </Link> </li>
                 <li className="  cursor-pointer p-1.5 rounded-bl-2xl text-white bg-blue-500 hover:bg-white  border-blue-600  border-2 hover:text-red-900 "> <Link  to={'/login'} >Sign Out</Link> </li>

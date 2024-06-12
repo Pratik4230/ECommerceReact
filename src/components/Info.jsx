@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { json, useParams } from "react-router-dom"
 import { E_URL } from "../../utils/contstants";
+import ReviewsContainer from "./ReviewsContainer";
+
 
 const Info = ()=> {
     const [info , setInfo ] = useState([])
     const [showData ,setShowData] = useState(false);
+   const [text , setText] = useState('');
+
     let {id} = useParams();
    
 
@@ -24,6 +28,8 @@ const Info = ()=> {
     const {category,description,image,price,title} = info;
     const {rating} = info;
     
+ 
+
 return (
     <>
     <div className="flex flex-col mb-10 md:mb-0 m-1 p-5  items-center bg-slate-300 ">
@@ -51,6 +57,10 @@ return (
   
         </div>
            
+           <section className="p-3 ">
+            
+            <ReviewsContainer/>
+           </section>
         </>
 )
 

@@ -18,7 +18,7 @@ const password = useRef(null);
         const Password =   password?.current?.value
         // console.log(Email)
 
-        const message =  checkValidData(Email, Password)
+        const message =  checkValidData(Password, Email)
         // console.log(message)
         setErrorMessage(message)
 
