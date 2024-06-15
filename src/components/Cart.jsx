@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { FaMinus , FaPlus  } from "react-icons/fa";
 import Info from './Info'
 import Ecard from './Ecard'
 import { Link } from 'react-router-dom'
@@ -42,11 +42,11 @@ const cartItems = useSelector((store) => store.cart.items)
         <section className=' mt-4'> 
         {cartItems.map((obj) => (
            <section key={obj.id} className='bg-slate-300 m-7 p-2'>  <Link  to={`info/${obj.id}`}> <Ecard  resData={obj}/>   </Link>   
-            <div className='flex justify-between  m-2 mt-5' > 
-              <section className=' bg-[#dbeafe] p-0.5 rounded-lg border-2 border-blue-700  '>
-              <button onClick={() => handleDecrementItem(obj.id)} className='text-black font-bold p-1 text-xl '>-</button>
-              <span className='text-black font-medium px-2 bg-[#bae6fd] rounded-md '>{obj.count}</span>
-              <button onClick={() => handleIncrementItem(obj.id)} className='text-black font-bold p-1'>+</button>
+            <div className='flex justify-between   m-2 mt-5' > 
+              <section className=' w-1/2  flex justify-evenly  items-center  bg-[#dbeafe] py-2 rounded-lg border-2 border-blue-700  '>
+              <button onClick={() => handleDecrementItem(obj.id)} className='text-black font-bold p-1 text-xl '><FaMinus /></button>
+              <span className='text-black font-bold px-2 bg-[#bae6fd] rounded-md '>{obj.count}</span>
+              <button onClick={() => handleIncrementItem(obj.id)} className='text-black font-bold p-1'><FaPlus/></button>
               </section>
 
               <button onClick={() => handleRemoveItem(obj.id)}  className='bg-blue-500 p-1  text-white font-semibold rounded' >Remove</button>
