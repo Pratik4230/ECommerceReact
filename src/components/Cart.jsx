@@ -42,9 +42,9 @@ const cartItems = useSelector((store) => store.cart.items)
         <section className=' mt-4'> 
         {cartItems.map((obj) => (
            <section key={obj.id} className='bg-slate-300 m-7 p-2'>  <Link  to={`info/${obj.id}`}> <Ecard  resData={obj}/>   </Link>   
-            <div className='flex justify-between' > 
-              <section className=' bg-[#dbeafe] p-0.5 rounded-lg '>
-              <button onClick={() => handleDecrementItem(obj.id)} className='text-black font-bold p-1'>-</button>
+            <div className='flex justify-between  m-2 mt-5' > 
+              <section className=' bg-[#dbeafe] p-0.5 rounded-lg border-2 border-blue-700  '>
+              <button onClick={() => handleDecrementItem(obj.id)} className='text-black font-bold p-1 text-xl '>-</button>
               <span className='text-black font-medium px-2 bg-[#bae6fd] rounded-md '>{obj.count}</span>
               <button onClick={() => handleIncrementItem(obj.id)} className='text-black font-bold p-1'>+</button>
               </section>

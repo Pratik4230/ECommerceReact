@@ -7,8 +7,8 @@ const Ecard = ({resData}) => {
 
   return (
     
-         <main className='flex '>
-        <div className='bg-white h-96 m-5 flex flex-col border-blue-700 border-4 rounded-lg  ring-2 items-center p-3 transition duration-300 '>
+         <main className='flex  '>
+        <div className='bg-white h-96 mx-5 mt-3 flex flex-col border-blue-700 border-4 rounded-lg  ring-2 items-center p-3 transition duration-300 '>
             <div>
               <img className='h-36 w-44 m-2' src={image} alt="Image" />
             </div>
