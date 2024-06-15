@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Info from './Info'
 import Ecard from './Ecard'
 import { Link } from 'react-router-dom'
-import { clearCart } from '../redux-store/cartSlice'
+import { clearCart, removeItems , incrementItem , decrementItem } from '../redux-store/cartSlice'
 
 const Cart = () => {
 
@@ -15,6 +15,17 @@ const cartItems = useSelector((store) => store.cart.items)
 
   const dispatch = useDispatch()
 
+  const handleRemoveItem = (id) => {
+    dispatch(removeItems(id));
+  }
+
+  const handleIncrementItem = (id) => {
+    dispatch(incrementItem(id));
+  };
+
+  const handleDecrementItem = (id) => {
+    dispatch(decrementItem(id));
+  };
   
   return (
     <div className='flex mb-10 md:mb-0 flex-col items-center '>
@@ -28,9 +39,21 @@ const cartItems = useSelector((store) => store.cart.items)
             <button onClick={() => (dispatch(clearCart()))} className='bg-blue-600 p-2 text-white border-blue-600 border-2 font-semibold rounded-xl   hover:bg-white hover:text-black'>Clear Cart</button>
         
 
-        <section> 
+        <section className=' mt-4'> 
         {cartItems.map((obj) => (
-           <section key={obj.id}>  <Link  to={`info/${obj.id}`}> <Ecard  resData={obj}/>  </Link>   </section> 
+           <section key={obj.id} className='bg-slate-300 m-7 p-2'>  <Link  to={`info/${obj.id}`}> <Ecard  resData={obj}/>   </Link>   
+            <div className='flex justify-between' > 
+              <section className=' bg-[#dbeafe] p-0.5 rounded-lg '>
+              <button onClick={() => handleDecrementItem(obj.id)} className='text-black font-bold p-1'>-</button>
+              <span className='text-black font-medium px-2 bg-[#bae6fd] rounded-md '>{obj.count}</span>
+              <button onClick={() => handleIncrementItem(obj.id)} className='text-black font-bold p-1'>+</button>
+              </section>
+
+              <button onClick={() => handleRemoveItem(obj.id)}  className='bg-blue-500 p-1  text-white font-semibold rounded' >Remove</button>
+
+               </div>
+          
+             </section> 
         ))}
         </section>
 
